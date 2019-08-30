@@ -1,1 +1,15 @@
-
+一、基于ubuntu自带的python2.7，基本无问题，很好编译。
+二、基于anconda3的python3：
+路径问题：修改Makefile.config中python路径， 
+ANACONDA_HOME := /home/wangzhaoming/anaconda3
+PYTHON_INCLUDE := $(ANACONDA_HOME)/include \
+		 $(ANACONDA_HOME)/include/python3.7m \
+		 $(ANACONDA_HOME)/lib/python3.7/site-packages/numpy/core/include
+如果编译遇到protobuf问题，
+If you have installed anaconda other than python only, 
+you should install other lib through conda install XXX other than pip install XXX.
+也就是不要pip安装protobuf，这样还是会链接系统自带的protobuf，而conda install protobuf，就会链接到anaconda目录下的protobuf。
+protoc --version 发现目前系统的protoc， 
+whereis protoc发现其实系统中有两个版本的protoc 分别在: usr/bin 和 $HOME/anaconda/bin里面
+使用 $ protoc --version  命令可查看当前protoc版本
+使用$ which protoc 命令可查看protoc的安装位置。
