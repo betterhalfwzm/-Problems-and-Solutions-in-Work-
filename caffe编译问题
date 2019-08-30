@@ -1,5 +1,7 @@
 一、基于ubuntu自带的python2.7，基本无问题，很好编译。
 二、基于anconda3的python3：
+重要的事情说三遍、重要的事情说三遍、重要的事情说三遍：
+一定要用conda install安装依赖、一定要用conda install安装依赖、一定要用conda install安装依赖
 1.路径问题：修改Makefile.config中python路径， 
 ANACONDA_HOME := /home/wangzhaoming/anaconda3
 PYTHON_INCLUDE := $(ANACONDA_HOME)/include \
