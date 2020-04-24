@@ -1,0 +1,8 @@
+下载gcc安装包gcc
+解压,cd gcc 
+./contrib/download_prerequisites，下载安装所需要的依赖
+export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/
+./configure --prefix=/data3/wangzhaoming/gcc5.4 --enable-threads=posix --disable-checking --disable-multilib --enable-languages=c,c++
+make -j32
+make install
+export PATH=/data3/wangzhaoming/gcc5.4/bin:$PATH
